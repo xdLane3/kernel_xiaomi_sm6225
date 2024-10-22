@@ -997,7 +997,7 @@ static int sc8551_get_adc_data(struct sc8551 *sc, int channel,  int *result)
 
 	if (sc->chip_vendor == SC8551) {
 		kernel_neon_begin();
-		*result = (int)(val * sc8551_adc_lsb[channel]);
+		result = (int)(val * sc8551_adc_lsb[channel]);
 		kernel_neon_end();
 	}
 	return 0;
